@@ -16,13 +16,9 @@ jobs:
       - name: Deploy to EC2
         uses: appleboy/ssh-action@v1.0.0
         with:
-          host: ${{13.203.30.199}}
-          username: ${{ ubuntu }}
-          key: ${{ b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAAAMwAAAAtzc2gtZW
-QyNTUxOQAAACCR9v74czmAzhpL4D2ZJnREcD3Vn+/gS2in5E72eUYqrQAAAKCICrApiAqw
-KQAAAAtzc2gtZWQyNTUxOQAAACCR9v74czmAzhpL4D2ZJnREcD3Vn+/gS2in5E72eUYqrQ
-AAAEB1MMJfJsPrZlyZV8lp31uu/0LW0h8Gq81WEqgjW9C0kJH2/vhzOYDOGkvgPZkmdERw
-PdWf7+BLaKfkTvZ5RiqtAAAAGHVidW50dUBpcC0xNzItMzEtMTQwLTEzNQECAwQF }}
+          host: ${{ secrets.EC2_HOST }}
+          username: ${{ secrets.EC2_USER }}
+          key: ${{ secrets.EC2_SSH_KEY }}
           script: |
             cd project-root
             git pull
