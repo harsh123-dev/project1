@@ -1,0 +1,24 @@
+# Environment variables
+.env
+
+# Terraform local state
+.terraform/
+terraform.tfstate
+terraform.tfstate.backup
+terraform.tfvars
+
+# SSH keys
+*.pem
+id_rsa
+id_rsa.pub
+github-actions
+github-actions.pub
+
+# Logs
+*.log
+
+# OS / Editor
+.DS_Store
+.vscode/
+.idea/
+
