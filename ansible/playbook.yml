@@ -1,0 +1,8 @@
+- name: Configure DevOps Server
+  hosts: devops
+  become: true
+
+  roles:
+    - docker
+    - app
+

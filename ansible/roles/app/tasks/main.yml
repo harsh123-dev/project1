@@ -1,0 +1,24 @@
+- name: Install docker-compose
+  get_url:
+    url: https://github.com/docker/compose/releases/download/v2.27.0/docker-compose-linux-x86_64
+    dest: /usr/local/bin/docker-compose
+    mode: '0755'
+
+- name: Create app directory
+  file:
+    path: /home/ubuntu/project-root
+    state: directory
+    owner: ubuntu
+    group: ubuntu
+
+- name: Clone repository
+  git:
+    repo: https://github.com/harsh123-dev/project1.git
+    dest: /home/ubuntu/project-root
+    force: yes
+
+- name: Start application
+  command: docker compose up -d
+  args:
+    chdir: /home/ubuntu/project-root
+
